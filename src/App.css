@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+:root {
+  --user-bg-color: #Ef4065;
+  --email-bg-color: #F4F5F9;
+  --border-color: #CFD2DC;
+  --text-color: #636363;
+  --filter-button-bg-color: #e1e4ea;
+  --read-bg-color: #f2f2f2;
+  --normal-text-color : #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul {
+  list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container{
+  background: var(--email-bg-color) 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-main-container{
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.action-properties{
   display: flex;
-  flex-direction: column;
+}
+
+.email-container {
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Full height layout */
+}
+
+.emails-list {
+  width: 100%; /* Full width initially */
+  transition: width 0.3s ease-in-out;
+}
+
+.emails-list.reduced {
+  width: 30%; /* Reduce width when an email is selected */
+}
+
+.read-mails {
+  width: 70%; /* Take the remaining space */
+  padding: 10px;
+  border-left: 1px solid #ddd; /* Optional: To create a divider between the two sections */
+}
+
+
+.ul-list{
+  display: flex;
+}
+
+.ul-list li{
+  margin-right: 15px;
+}
+
+.ul-list button {
+  background: none;
+  border: 0px;
+  width :80px;
+  padding: 5px;
+  cursor: pointer; 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; 
+  color : var(--normal-text-color);
+}
+
+
+.glist-bg-container {
+  background-color: #f9f9f9; 
+}
+
+.gmail-details-container {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gmail-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.gmail-item:hover {
+  background-color: var(--border-color); 
+  transform: translateY(-2px); 
+  transition: all 0.2s ease-in-out; 
+  cursor: pointer;
+}
+
+.gmail-avatar {
+  background-color: var(--user-bg-color); 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.avatar-text {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.gmail-info {
+  flex-grow: 1;
+}
+
+.from-text,
+.subject-text,
+.description-text,
+.date-text {
+  margin: 5px 0;
+}
+
+.from-text {
+  font-size: 14px;
+  color: var(--text-color); 
+}
+
+.subject-text {
+  color: var(--text-color); 
+}
+
+.subject-text span{
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--text-color); 
+}
+
+.description-text {
+  font-size: 12px;
+  color: var(--text-color); 
+}
+
+.favorite-text {
+  font-size: 12px;
+  color: var(--user-bg-color); 
+  display: none; 
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+.gmail-item:hover .favorite-text {
+  display: inline-block; 
+}
+
+.date-text {
+  font-size: 12px;
+  color: var(--text-color); 
+}
+
+button:hover {
+  background-color: var(--filter-button-bg-color); 
+}
+
+button.active-filter {
+  background-color: var(--filter-button-bg-color); 
+  font-size: 14px;
 }
